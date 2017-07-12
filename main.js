@@ -55,15 +55,14 @@ console.log(GBP + " " +"pounds")
 // // 4: Display a list of all items who are made of wood.
 function question4 () {
 
-let madeOf = data.filter(function(item){
-  for (let i = 0; i < item.materials.length; i++){
-    if (item.materials[i] === "wood"){
-    return true
-  }
+  let madeOf = data.reduce(function(a,b){
+    if (b.materials.indexOf("wood")!== -1){
+      return a + 1
+  }else {
+    return a
+    }
 
-}
-})
-
+} , 0)
 console.log(madeOf)
 }
 //
